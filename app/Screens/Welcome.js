@@ -1,5 +1,8 @@
 import { Dimensions, StyleSheet, Text, View, ImageBackground, SafeAreaView, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { StatusBar } from 'expo-status-bar'
+import Food from '../services/Food'
+
 import { useNavigation } from 'expo-router';
 
 // const {width, height} = Dimensions.get('window')
@@ -22,7 +25,7 @@ const Welcome = () => {
    <ImageBackground style={{backgroundColor: 'white'}}>
    {/*Top view */}
         <View style={styles.header}>
-        <ImageBackground source={require('../assets/welcome1.jpg')} style={styles.image} >
+        <ImageBackground source={require('../assets/peach.jpg')} style={styles.image} >
             {/* <Text style={{flex: 1, alignItems: 'center', color: 'white', justifyContent: 'center'}}>dnsiocdicdindisk</Text> */}
         </ImageBackground>
     

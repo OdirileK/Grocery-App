@@ -7,7 +7,7 @@ const Details = ({ route }) => {
   return (
     <SafeAreaView style={{ backgroundColor: "black" }} >
       <View style={styles.header} >
-      <ImageBackground source={require('../assets/vegetables-with-salt-corn-cob.jpg')} style={{width: '100%', height: '100%'}}>
+      <ImageBackground source={require('../assets/vege.jpg')} style={{width: '100%', height: '100%'}}>
       </ImageBackground>
       </View>
 
@@ -44,8 +44,13 @@ const Details = ({ route }) => {
         <Text style={{ fontSize: 20, marginTop: 4, color: "gray" }}>
           {foodItem.type}
         </Text>
-        <Text style={{marginTop: 10}}>{foodItem.description}
-          </Text>          
+        <View>
+        <Text style={{marginTop: 10, fontSize:18}}>Benefits:
+          </Text>  
+          <Text style={{marginTop: 20}}>{foodItem.description}
+          </Text> 
+        </View>
+                 
       </View>
         </View>
         

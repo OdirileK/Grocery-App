@@ -5,7 +5,7 @@ const foodData= [
         type: 'Fruit',
         price: 10,
         image: require('../assets/banana.jpg'),
-        description: 'Rich in potassium, which is essential for heart health and blood pressure regulation and helps to prevent osteoporosis.',
+        description: 'Rich in potassium, which is essential for heart health and blood pressure regulation and helps to prevent osteoporosis. Bananas are a great energy source due to their natural sugars (fructose, glucose, and sucrose) and carbohydrates. They can provide a quick energy boost and are a favorite among athletes and fitness enthusiasts. Bananas contain tryptophan, an amino acid that the body converts to serotonin, a neurotransmitter known for its mood-enhancing effects. Eating bananas can help improve mood and reduce symptoms of depression.',
         quantity: 0
     },
     {
@@ -14,7 +14,7 @@ const foodData= [
         type: 'Vegetable',
         price: 15,
         image: require('../assets/brocoli.jpg'),
-        description: 'Packed with vitamins (C, K), minerals, and fiber, supporting a healthy immune system and bone health.',
+        description: 'Rich in essential nutrients: Broccoli is packed with vitamins and minerals, including vitamin C, vitamin K, vitamin A, vitamin B6, folate, potassium, and manganese. It also contains fiber and antioxidants, making it a nutrient-dense food. Broccoli is an excellent source of various antioxidants, such as sulforaphane, quercetin, and kaempferol. These compounds help neutralize harmful free radicals in the body, reducing oxidative stress and inflammation. May have anti-cancer properties: Some studies suggest that certain compounds in broccoli, such as sulforaphane, may have anticancer properties by inhibiting the growth of cancer cells and promoting detoxification of harmful substances in the body.',
         quantity: 0
     },
     {
@@ -23,7 +23,7 @@ const foodData= [
         type: 'Vegatable',
         price: 10,
         image: require('../assets/carrot.jpg'),
-        description: 'High in beta-carotene, which is converted into vitamin A, supporting eye health and immune function.',
+        description: 'Carrots are an excellent source of essential vitamins and minerals. They are particularly high in vitamin A, providing the body with a natural source of beta-carotene, which is important for good vision, especially in low-light conditions. Vitamin A is also essential for maintaining healthy skin and a robust immune system. The antioxidants and vitamin C in carrots support collagen production, which is crucial for maintaining skin elasticity and preventing signs of aging. Regular consumption of carrots can help keep the skin looking healthy and youthful. Chewing on raw carrots can stimulate saliva production, which helps in neutralizing acid and reducing the risk of cavities and tooth decay. The minerals present in carrots also contribute to overall oral health.',
         quantity: 0
     },
     {
@@ -32,7 +32,7 @@ const foodData= [
         type: 'Vegetable',
         price:80,
         image: require('../assets/cauliflower.jpg'),
-        description: 'Contains antioxidants and anti-inflammatory compounds that may reduce the risk of chronic diseases.',
+        description: 'Contains antioxidants and anti-inflammatory compounds that may reduce the risk of chronic diseases.It contains dietary fiber, which aids in digestion and helps maintain bowel regularity. Fiber also contributes to a feeling of fullness, which can be beneficial for weight management. Cauliflower is incredibly versatile and can be used in various dishes, such as roasted cauliflower, cauliflower rice, cauliflower mash, and as a substitute for rice or pizza crust. As with any food, the benefits of cauliflower are best obtained when it is part of a balanced and varied diet. So, consider incorporating cauliflower and other colorful vegetables into your meals for optimal health benefits.',
         quantity: 0
     },
     {
@@ -41,7 +41,7 @@ const foodData= [
         type: 'Fruit',
         price: 25,
         image: require('../assets/grapefruit.jpg'),
-        description: 'Low in calories and high in vitamins (C, A), contributing to skin health and immune support.',
+        description: 'Low in calories and high in vitamins (C, A), contributing to skin health and immune support.  The vitamin C and antioxidants in grapefruit can benefit the skin by promoting collagen production, improving skin elasticity, and protecting against sun damage. With its high water content, grapefruit can help keep you hydrated, contributing to overall well-being and supporting bodily functions. Grapefruit is often associated with weight loss due to its low calorie content and high water content. Studies have suggested that including grapefruit in your diet may help reduce overall calorie intake and support weight loss efforts.',
         quantity: 0
     },
     {
@@ -50,7 +50,7 @@ const foodData= [
         type: 'Fruit',
         price: 10,
         image: require('../assets/green-apple.jpg'),
-        description: 'Contains antioxidants that support overall health and may reduce the risk of chronic diseases.',
+        description: 'Green apples are a good source of essential nutrients, including vitamin C, vitamin A, potassium, and dietary fiber. These nutrients play a vital role in supporting overall health and well-being. The dietary fiber in green apples promotes healthy digestion by aiding in regular bowel movements and preventing constipation. Fiber also supports gut health by promoting the growth of beneficial gut bacteria. Chewing on apples stimulates saliva production, which helps wash away bacteria and food particles, reducing the risk of tooth decay.',
         quantity: 0
     },
     {
@@ -59,7 +59,7 @@ const foodData= [
         type: 'Fruit',
         price: 20,
         image: require('../assets/green-grapes.jpg'),
-        description: 'Contains vitamins (C, K) and minerals, promoting overall well-being. Rich in antioxidants, including resveratrol, which may support heart health.',
+        description: 'Contains vitamins (C, K) and minerals, promoting overall well-being. Rich in antioxidants, including resveratrol, which may support heart health. Resveratrol, found in green grapes, has been associated with promoting heart health. It may help lower blood pressure, reduce LDL cholesterol levels, and improve blood vessel function.',
         quantity: 0
     },
     {
@@ -140,7 +140,7 @@ const foodData= [
         type: 'Fruit',
         price: 10,
         image: require('../assets/red-apples.jpg'),
-        description: '',
+        description: 'Red apples are packed with essential nutrients, including dietary fiber, vitamin C, potassium, and various antioxidants. These nutrients support overall health and well-being.  Red apples contain various antioxidants, such as quercetin and flavonoids, which help neutralize harmful free radicals in the body. Antioxidants play a role in reducing oxidative stress and inflammation, potentially lowering the risk of chronic diseases. The fiber in red apples can help regulate blood sugar levels and prevent spikes in blood glucose after a meal. This benefit can be particularly valuable for individuals with diabetes or those at risk of developing diabetes.',
         quantity: 0
     },
     {
