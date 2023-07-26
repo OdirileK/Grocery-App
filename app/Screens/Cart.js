@@ -24,6 +24,7 @@ const Cart = ({route}) => {
   const handleClosePaymentModal = () => {
     setIsPaymentModalVisible(false);
   };
+
   const getTotalPrice = () => {
     return cartData.reduce((total, item) => total + (parseFloat(item.price) * item.quantity), 0);
   };
@@ -68,7 +69,7 @@ const Cart = ({route}) => {
             {item.type}
           </Text>
           <Text style={{ fontSize: 17, fontWeight: "bold", marginTop: 12 }}>
-            {item.price}
+           R{item.price}
           </Text>
           <View style={{ alignItems: "flex-end", top: -40 }}>
           {/*number of itens in the cart */}

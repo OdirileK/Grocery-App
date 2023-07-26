@@ -165,7 +165,7 @@ const foodData= [
         id: 16,
         name:"Strawberry",
         type: 'Fruit',
-        price: 30,
+        price: 30.00,
         image: require('../assets/strawberry.jpg'),
         description: 'High in vitamin C and antioxidants, supporting the immune system and skin health.',
         quantity: 0
@@ -174,7 +174,7 @@ const foodData= [
         id: 17,
         name:"Tomatoe",
         type: 'Vegetable',
-        price: 20,
+        price: '20.00',
         image: require('../assets/tomatoes.jpg'),
         description: 'Tomatoes are an excellent source of antioxidants, such as vitamin C, vitamin E, and beta-carotene. These antioxidants help combat free radicals in the body, reducing oxidative stress and cellular damage.',
         quantity: 0

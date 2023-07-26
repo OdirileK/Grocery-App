@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Modal, StyleSheet, TextInput, Linking } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, StyleSheet, TextInput, Linking, Image } from 'react-native';
+import Icon from "react-native-vector-icons/MaterialIcons";
 import axios from 'axios';
 
 
@@ -40,8 +41,9 @@ const PaymentModal = ({ isVisible, onClose, totalPrice }) => {
 
   return (
     <Modal visible={isVisible} animationType="slide" onRequestClose={onClose}>
+       <Image source={require('../assets/pay.jpg')} style={{height: '60%', width: '100%', justifyContent:'center'}}></Image>
       <View style={styles.modalContainer}>
-        <Text>Payment Form</Text>
+       
         <TouchableOpacity style={styles.button} onPress={handlePayment}>
           <Text style={styles.buttonText}>Initialize payment</Text>
         </TouchableOpacity>
@@ -50,8 +52,8 @@ const PaymentModal = ({ isVisible, onClose, totalPrice }) => {
             <Text style={styles.buttonText}>Pay Now</Text>
           </TouchableOpacity>
         )}
-        <TouchableOpacity style={{marginTop: 20}}onPress={onClose}>
-          <Text>Close</Text>
+        <TouchableOpacity style={{ justifyContent: 'center', top: '80%'}}onPress={onClose}>
+        <Icon name="close" size={30} style={{ justifyContent: "center" }} />
         </TouchableOpacity>
       </View>
     </Modal>
@@ -59,7 +61,7 @@ const PaymentModal = ({ isVisible, onClose, totalPrice }) => {
 };
 const styles = StyleSheet.create({
   modalContainer: {
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: 'black',
     padding: 12,
     borderRadius: 8,
     marginTop: 20,
