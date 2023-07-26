@@ -20,12 +20,7 @@ const PaymentModal = ({ isVisible, onClose, totalPrice }) => {
       const { data } = response;
       console.log(data);
       setPaymentData(data);
-
-      // If the paymentData contains the authorization_url, open it in the browser
-      // if (data.data.authorization_url) {
-      //   Linking.openURL(data.data.authorization_url)
-      //     .catch((err) => console.error('Error while opening the URL:', err));
-      // }
+      
     } catch (error) {
       console.log('Payment initiation error:', error);
     }
@@ -59,6 +54,7 @@ const PaymentModal = ({ isVisible, onClose, totalPrice }) => {
     </Modal>
   );
 };
+
 const styles = StyleSheet.create({
   modalContainer: {
     // flex: 1,

@@ -48,7 +48,7 @@ const Welcome = () => {
       {/*Top view */}
       <View style={styles.header}>
         <Image
-          source={require("../assets/welcome1.jpg")}
+          source={require("../assets/background.jpg")}
           style={styles.image}
         />
       </View>
@@ -61,7 +61,7 @@ const Welcome = () => {
         <View
           style={{
             backgroundColor: "black",
-            marginTop: 60,
+            marginTop: '10%',
             height: "10%",
             width: "50%",
             justifyContent: "center",
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     height: "40%",
     borderTopLeftRadius: 100,
     borderTopRightRadius: 100,
-    top: -300,
+    top: '-28%',
   },
   inputContainer: {
     marginTop: 55,

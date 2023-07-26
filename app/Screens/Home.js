@@ -14,6 +14,8 @@ import { FlatList } from "react-native-gesture-handler";
 import foodData from "../services/Food";
 import { Dimensions } from "react-native";
 import { useNavigation } from "expo-router";
+import {handleAddToCart} from '../Redux/cartSlice'
+import { UseSelector, useDispatch } from "react-redux";
 
 
 //getting size from the screen width
@@ -24,6 +26,7 @@ const Home = () => {
   const nav = useNavigation();
   const [searchQuery, setSearchQuery] = useState("");
   const [cartItems, setCartItems] = useState([])
+  const dispatch = useDispatch()
 
   // Filter the data based on the search query
   const filteredData = foodData.filter((item) =>
@@ -34,7 +37,6 @@ const Home = () => {
     const existingItem = cartItems.find((item) => item.id === foodData.id);
     try{
     if (existingItem) {
-      // If the item already exists in the cart, update the counter
       const updatedCartItems = cartItems.map((item) =>
         item.id === foodData.id
           ? { ...item, quantity: item.quantity + 1 }
@@ -42,7 +44,6 @@ const Home = () => {
       );
       setCartItems(updatedCartItems);
     } else {
-      // If the item is not in the cart, add it with a quantity of 1
       setCartItems([...cartItems, { ...foodData, quantity: 1 }]);
     }
   }
@@ -79,7 +80,7 @@ const Home = () => {
             justifyContent: "space-between",
           }}
         >
-          <Text style={{ fontSize: 18, fontWeight: "bold" }}>R{item.price}</Text>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>R{item.price/100}</Text>
           <TouchableOpacity
             style={styles.addToCart} onPress={() => addToCart(item)} >
             <Icon name="add" size={20} color={"white"} />

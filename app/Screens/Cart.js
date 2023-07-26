@@ -68,9 +68,7 @@ const Cart = ({route}) => {
           <Text style={{ fontSize: 14, fontStyle: "italic", color: "gray" }}>
             {item.type}
           </Text>
-          <Text style={{ fontSize: 17, fontWeight: "bold", marginTop: 12 }}>
-           R{item.price}
-          </Text>
+          <Text style={{ fontSize: 17, fontWeight: "bold", marginTop: 12 }}> R{item.price/100} </Text>
           <View style={{ alignItems: "flex-end", top: -40 }}>
           {/*number of itens in the cart */}
             <Text style={{ fontWeight: "bold", fontSize: 18 }}>{item.quantity}</Text>
@@ -119,7 +117,7 @@ const Cart = ({route}) => {
             marginTop: 30,
           }}
         >
-          <Text style={{ fontSize: 25, fontWeight: "bold", color: 'white' }}>Total price: R{getTotalPrice()}</Text>
+          <Text style={{ fontSize: 25, fontWeight: "bold", color: 'white' }}>Total price: R{getTotalPrice()/100}</Text>
         </View>
           {/*checkout button */}
         <View style={{backgroundColor: 'white', marginTop: 18, height: '20%', width: '70%', justifyContent: 'center', alignItems: 'center', borderRadius: 25, marginHorizontal: '15%'}} >
