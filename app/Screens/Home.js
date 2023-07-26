@@ -15,7 +15,7 @@ import foodData from "../services/Food";
 import { Dimensions } from "react-native";
 import { useNavigation } from "expo-router";
 import {handleAddToCart} from '../Redux/cartSlice'
-import { UseSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 
 //getting size from the screen width
@@ -27,30 +27,13 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [cartItems, setCartItems] = useState([])
   const dispatch = useDispatch()
-
   // Filter the data based on the search query
   const filteredData = foodData.filter((item) =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const addToCart = (foodData) => {
-    const existingItem = cartItems.find((item) => item.id === foodData.id);
-    try{
-    if (existingItem) {
-      const updatedCartItems = cartItems.map((item) =>
-        item.id === foodData.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
-      setCartItems(updatedCartItems);
-    } else {
-      setCartItems([...cartItems, { ...foodData, quantity: 1 }]);
-    }
-  }
-  catch (err) {
-    console.log(err)
-  }
-    
+  const addToCart = (item) => {
+    dispatch(handleAddToCart(item))
   };
 
 

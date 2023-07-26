@@ -38,7 +38,7 @@ const Details = ({ route }) => {
                 fontWeight: 'bold',
                 fontSize: 16,
               }}>
-              R{foodItem.price}
+              R{foodItem.price/100}
             </Text>
             </View>
         <Text style={{ fontSize: 20, marginTop: 4, color: "gray" }}>

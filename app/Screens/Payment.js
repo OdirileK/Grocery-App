@@ -2,23 +2,26 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet, TextInput, Linking, Image } from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import axios from 'axios';
-
+import { useDispatch, useSelector } from "react-redux";
 
 
 const PaymentModal = ({ isVisible, onClose, totalPrice }) => {
   const [amount, setAmount] = useState('');
   const [paymentData, setPaymentData] = useState(null);
+
+  const { total} = useSelector((store) => store.cart)
+
   const handlePayment = async () => {
     
     const serverData = {
       email: 'kekanaodirile@gmail.com',
-      amount: totalPrice,
+      amount: total,
     };
 
     try {
       const response = await axios.post('http://10.255.67.96:5000/initiate-payment', serverData);
       const { data } = response;
-      console.log(data);
+      // console.log(data);
       setPaymentData(data);
       
     } catch (error) {
