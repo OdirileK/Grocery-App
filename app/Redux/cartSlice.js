@@ -12,29 +12,31 @@ const cartSlice = createSlice({
             const existingItem = state.cartList.find((item) => item.id === data.id);
 
             if (!existingItem) {
-                state.cartList.push({ ...data, quantity: 1 });
+                state.cartList.push({ ...data, quantity: 1, price: data.price });
                 // console.log('New item added to cart', updateTotal);
-                updateTotal(state)
+                updateTotal(state);
             } else {
-                existingItem.quantity += 1 ;
-                existingItem.price += existingItem.price ;
+                existingItem.quantity += 1;
+                existingItem.price = existingItem.quantity * data.price; // Calculate the new price based on the updated quantity
+            
                 // console.log('Item quantity increased');
-                updateTotal(state)
-
+                updateTotal(state);
             }
+            
             // console.log(state.cartList)
-
-            if(state.cartList.length !== 0){
-                    for (let i = 0; i < state.cartList.length; i++) {
-                        state.total += state.cartList[i].price
-                        console.log('the price', state.cartList[i].price)
-                      }
-                   }
+            
+            if (state.cartList.length !== 0) {
+                state.total = 0; 
+                for (let i = 0; i < state.cartList.length; i++) {
+                    state.total += state.cartList[i].price;
+                    console.log('the price', state.cartList[i].price);
+                }
+            }
+            
         },
        
         updateTotal: (action,state) => {
             console.log(state.cartList)
-        
         }
     },
 });

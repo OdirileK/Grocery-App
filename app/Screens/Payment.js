@@ -9,6 +9,7 @@ const PaymentModal = ({ isVisible, onClose, totalPrice }) => {
   const [amount, setAmount] = useState('');
   const [paymentData, setPaymentData] = useState(null);
 
+  
   const { total} = useSelector((store) => store.cart)
 
   const handlePayment = async () => {

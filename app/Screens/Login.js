@@ -27,6 +27,7 @@ const Welcome = () => {
         .then((userCredentials) => {
           const user = userCredentials.user;
           // nav.replace('Home')
+          alert('Registration succesful!')
           console.log(user.email);
         })
         .catch((error) => alert(error.message));
