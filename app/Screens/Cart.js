@@ -4,7 +4,6 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import { FlatList } from "react-native-gesture-handler";
 import { useNavigation } from 'expo-router';
 import PaymentModal from "./Payment";
-import {getTotal} from '../Redux/cartSlice'
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = ({route}) => {
@@ -13,7 +12,7 @@ const Cart = ({route}) => {
   const nav = useNavigation()
   const [isPaymentModalVisible, setIsPaymentModalVisible] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
-  
+
 
   const {cartList, total} = useSelector((store) => store.cart)
 
@@ -29,24 +28,6 @@ const Cart = ({route}) => {
     setIsPaymentModalVisible(false);
   };
 
- 
-
-  const incrementItem = (itemId) => {
-    const updatedCart = cartData.map((item) =>
-      item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
-    );
-    setCartData(updatedCart);
-  };
-  const decrementItem = (itemId) => {
-    const updatedCart = cartData.map((item) =>
-      item.id === itemId
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-    ).filter(item => item.quantity > 0);
-    setCartData(updatedCart);
-  };
-
-  
   const CardView = ({ item }) => {
     return (
       <View style={styles.cart}>
@@ -116,7 +97,7 @@ const Cart = ({route}) => {
           <TouchableOpacity activeOpacity={0.1} onPress={handleOpenPaymentModal}>
           <Text style={styles.title}>Checkout</Text>
           </TouchableOpacity>
-          <PaymentModal isVisible={isPaymentModalVisible} onClose={handleClosePaymentModal} totalPrice={totalPrice}/>
+          <PaymentModal isVisible={isPaymentModalVisible} onClose={handleClosePaymentModal} />
           </View>
       </View>
     </SafeAreaView>

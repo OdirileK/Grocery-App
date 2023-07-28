@@ -16,6 +16,7 @@ import { Dimensions } from "react-native";
 import { useNavigation } from "expo-router";
 import {handleAddToCart} from '../Redux/cartSlice'
 import { useSelector, useDispatch } from "react-redux";
+import {incrementQuantity, decrementQuantity} from '../Redux/cartSlice'
 
 
 //getting size from the screen width
@@ -36,6 +37,13 @@ const Home = () => {
     dispatch(handleAddToCart(item))
   };
 
+  const incrementItem = (id) => {
+    dispatch(incrementQuantity({ id }));
+  };
+  const decrementItem = (item) => {
+    console.log('dispatch')
+    dispatch(decrementQuantity( item ));
+  };
 
   // Cards view
   const renderCard = ({ item }) => {
@@ -64,10 +72,17 @@ const Home = () => {
           }}
         >
           <Text style={{ fontSize: 18, fontWeight: "bold" }}>R{item.price/100}</Text>
+          
+          <TouchableOpacity  style={styles.addToCart} onPress={() => decrementItem(item)}>
+          <Icon name="exposure-minus-1" size={20} color={"white"} />
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.addToCart} onPress={() => addToCart(item)} >
             <Icon name="add" size={20} color={"white"} />
           </TouchableOpacity>
+
+         
+          
         </View>
       </TouchableOpacity>
     );
