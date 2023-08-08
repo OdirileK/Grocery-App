@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
+
 import { FlatList } from "react-native-gesture-handler";
 import foodData from "../services/Food";
 import { Dimensions } from "react-native";
@@ -74,7 +75,7 @@ const Home = () => {
           <Text style={{ fontSize: 18, fontWeight: "bold" }}>R{item.price/100}</Text>
           
           <TouchableOpacity  style={styles.addToCart} onPress={() => decrementItem(item)}>
-          <Icon name="exposure-minus-1" size={20} color={"white"} />
+          <Icon name="horizontal-rule" size={20} color={"white"} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.addToCart} onPress={() => addToCart(item)} >

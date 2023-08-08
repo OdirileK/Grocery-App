@@ -61,11 +61,18 @@ const cartSlice = createSlice({
             
         },
 
+        clearCart: (state) => {
+            state.cartList = [];
+            state.total = 0;
+            console.log('we are clearing',state)
+            updateTotal(state)
+          },
+
         updateTotal: (action, state) => {
             console.log(state.cartList)
         }
     },
 });
 
-export const { handleAddToCart, updateTotal, decrementQuantity, incrementCartItem } = cartSlice.actions;
+export const { handleAddToCart, updateTotal, decrementQuantity, incrementCartItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

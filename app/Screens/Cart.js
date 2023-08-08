@@ -5,6 +5,8 @@ import { FlatList } from "react-native-gesture-handler";
 import { useNavigation } from 'expo-router';
 import PaymentModal from "./Payment";
 import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from '../Redux/cartSlice'; 
+
 
 const Cart = ({route}) => {
   const cartItems = route.params.cartItems;
@@ -13,6 +15,7 @@ const Cart = ({route}) => {
   const [isPaymentModalVisible, setIsPaymentModalVisible] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  const dispatch = useDispatch()
 
   const {cartList, total} = useSelector((store) => store.cart)
 
@@ -27,6 +30,10 @@ const Cart = ({route}) => {
   const handleClosePaymentModal = () => {
     setIsPaymentModalVisible(false);
   };
+
+  const handleClearCart = () => {
+    dispatch(clearCart())
+  }
 
   const CardView = ({ item }) => {
     return (
@@ -62,7 +69,11 @@ const Cart = ({route}) => {
         <Text style={{ fontSize: 30, marginLeft: 120, color: "black" }}>
           Cart
         </Text>
+        
       </View>
+      <TouchableOpacity onPress={handleClearCart}>
+        <Text style={{textAlign: 'center'}}>Clear</Text>
+      </TouchableOpacity>
       <View style={{ height: "70%"}}>
 
         <FlatList
